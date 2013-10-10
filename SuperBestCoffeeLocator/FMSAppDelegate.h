@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Frank McAuley. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @interface FMSAppDelegate : UIResponder <UIApplicationDelegate>
 
