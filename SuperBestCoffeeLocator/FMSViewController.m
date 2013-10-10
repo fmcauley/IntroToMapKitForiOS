@@ -38,7 +38,24 @@
     
     [self.mapKit setRegion:region animated:TRUE];
     [self.mapKit regionThatFits:region];
-
+    
+    // configure the map
+    self.mapKit.showsBuildings = YES;
+    self.mapKit.showsPointsOfInterest = YES;
+    self.mapKit.showsUserLocation = YES;
+    
+    // camera
+    // Zoom into the Washington Monument with a pitch of 60°
+    MKMapCamera *aCamera = [MKMapCamera camera];
+    [aCamera setCenterCoordinate:[gen centerCoffeeShop]];
+    [aCamera setAltitude:400];
+    [aCamera setPitch:60];
+    [self.mapKit setCamera:aCamera];
+    
+    /**
+     - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
+     Add a button that will set this for display purpose?
+     */
 }
 
 - (void)didReceiveMemoryWarning
