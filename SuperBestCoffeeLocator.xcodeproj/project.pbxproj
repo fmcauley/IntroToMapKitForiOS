@@ -22,6 +22,7 @@
 		F010CC8918063CDA00E84A4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F010CC6818063CDA00E84A4F /* UIKit.framework */; };
 		F010CC9118063CDA00E84A4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F010CC8F18063CDA00E84A4F /* InfoPlist.strings */; };
 		F010CC9318063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9218063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m */; };
+		F010CC9D18063E0F00E84A4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F010CC9C18063E0F00E84A4F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F010CC8E18063CDA00E84A4F /* SuperBestCoffeeLocatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperBestCoffeeLocatorTests-Info.plist"; sourceTree = "<group>"; };
 		F010CC9018063CDA00E84A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F010CC9218063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperBestCoffeeLocatorTests.m; sourceTree = "<group>"; };
+		F010CC9C18063E0F00E84A4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F010CC9D18063E0F00E84A4F /* MapKit.framework in Frameworks */,
 				F010CC6718063CDA00E84A4F /* CoreGraphics.framework in Frameworks */,
 				F010CC6918063CDA00E84A4F /* UIKit.framework in Frameworks */,
 				F010CC6518063CDA00E84A4F /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		F010CC6318063CDA00E84A4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F010CC9C18063E0F00E84A4F /* MapKit.framework */,
 				F010CC6418063CDA00E84A4F /* Foundation.framework */,
 				F010CC6618063CDA00E84A4F /* CoreGraphics.framework */,
 				F010CC6818063CDA00E84A4F /* UIKit.framework */,
