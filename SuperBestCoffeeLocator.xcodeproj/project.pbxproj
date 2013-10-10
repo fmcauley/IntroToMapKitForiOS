@@ -25,6 +25,8 @@
 		F010CC9D18063E0F00E84A4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F010CC9C18063E0F00E84A4F /* MapKit.framework */; };
 		F010CCA018063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
 		F010CCA118063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
+		F0D357D918070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
+		F0D357DA18070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		F010CC9C18063E0F00E84A4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSCoffeeShop.h; sourceTree = "<group>"; };
 		F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSCoffeeShop.m; sourceTree = "<group>"; };
+		F0D357D718070E3B00E58543 /* FMSGenerateCoffeeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSGenerateCoffeeData.h; sourceTree = "<group>"; };
+		F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSGenerateCoffeeData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,16 +126,13 @@
 		F010CC6A18063CDA00E84A4F /* SuperBestCoffeeLocator */ = {
 			isa = PBXGroup;
 			children = (
-				F010CC7318063CDA00E84A4F /* FMSAppDelegate.h */,
-				F010CC7418063CDA00E84A4F /* FMSAppDelegate.m */,
-				F010CC7618063CDA00E84A4F /* Main_iPhone.storyboard */,
-				F010CC7918063CDA00E84A4F /* Main_iPad.storyboard */,
-				F010CC7C18063CDA00E84A4F /* FMSViewController.h */,
-				F010CC7D18063CDA00E84A4F /* FMSViewController.m */,
+				F0D357D618070E0A00E58543 /* Helpers */,
+				F0D357D518070D8100E58543 /* StoryBoards */,
+				F0D357D418070D6C00E58543 /* ViewControllers */,
+				F0D357D318070D5C00E58543 /* Delegate */,
+				F0D357D218070D4C00E58543 /* Model */,
 				F010CC7F18063CDA00E84A4F /* Images.xcassets */,
 				F010CC6B18063CDA00E84A4F /* Supporting Files */,
-				F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */,
-				F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */,
 			);
 			path = SuperBestCoffeeLocator;
 			sourceTree = "<group>";
@@ -163,6 +164,51 @@
 				F010CC8F18063CDA00E84A4F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0D357D218070D4C00E58543 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */,
+				F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F0D357D318070D5C00E58543 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F010CC7318063CDA00E84A4F /* FMSAppDelegate.h */,
+				F010CC7418063CDA00E84A4F /* FMSAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		F0D357D418070D6C00E58543 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F010CC7C18063CDA00E84A4F /* FMSViewController.h */,
+				F010CC7D18063CDA00E84A4F /* FMSViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0D357D518070D8100E58543 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				F010CC7618063CDA00E84A4F /* Main_iPhone.storyboard */,
+				F010CC7918063CDA00E84A4F /* Main_iPad.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		F0D357D618070E0A00E58543 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0D357D718070E3B00E58543 /* FMSGenerateCoffeeData.h */,
+				F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D357D918070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */,
 				F010CC7118063CDA00E84A4F /* main.m in Sources */,
 				F010CC7E18063CDA00E84A4F /* FMSViewController.m in Sources */,
 				F010CCA018063F0000E84A4F /* FMSCoffeeShop.m in Sources */,
@@ -276,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F010CCA118063F0000E84A4F /* FMSCoffeeShop.m in Sources */,
+				F0D357DA18070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */,
 				F010CC9318063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +535,7 @@
 				F010CC9818063CDA00E84A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F010CC9918063CDA00E84A4F /* Build configuration list for PBXNativeTarget "SuperBestCoffeeLocatorTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +544,7 @@
 				F010CC9B18063CDA00E84A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

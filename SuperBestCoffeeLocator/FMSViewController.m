@@ -7,7 +7,7 @@
 //
 
 #import "FMSViewController.h"
-#import "FMSCoffeeShop.h"
+#import "FMSGenerateCoffeeData.h"
 
 
 @interface FMSViewController () <MKMapViewDelegate>
@@ -22,9 +22,10 @@
     // TODO: create a core data store for the map data
     
     [super viewDidLoad];
-	FMSCoffeeShop <MKAnnotation> *coffeeShop = [[FMSCoffeeShop alloc]initWithName:@"Sample" rating:@"123 Main St" Lat:39.948838 andLng:-82.995103];
+	
+    FMSGenerateCoffeeData *gen = [FMSGenerateCoffeeData new];
     
-    [self.mapKit addAnnotation:coffeeShop];
+    [self.mapKit addAnnotations:[gen coffeeShops]];
     
     //set the region
     MKCoordinateRegion region;
@@ -33,7 +34,7 @@
     span.latitudeDelta = 0.3;
     span.longitudeDelta = 0.3;
     region.span=span;
-    region.center = coffeeShop.coordinate;
+    region.center = [gen centerCoffeeShop];
     
     [self.mapKit setRegion:region animated:TRUE];
     [self.mapKit regionThatFits:region];
