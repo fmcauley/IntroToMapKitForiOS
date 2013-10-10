@@ -23,6 +23,8 @@
 		F010CC9118063CDA00E84A4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F010CC8F18063CDA00E84A4F /* InfoPlist.strings */; };
 		F010CC9318063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9218063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m */; };
 		F010CC9D18063E0F00E84A4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F010CC9C18063E0F00E84A4F /* MapKit.framework */; };
+		F010CCA018063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
+		F010CCA118063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		F010CC9018063CDA00E84A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F010CC9218063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperBestCoffeeLocatorTests.m; sourceTree = "<group>"; };
 		F010CC9C18063E0F00E84A4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSCoffeeShop.h; sourceTree = "<group>"; };
+		F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSCoffeeShop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				F010CC7D18063CDA00E84A4F /* FMSViewController.m */,
 				F010CC7F18063CDA00E84A4F /* Images.xcassets */,
 				F010CC6B18063CDA00E84A4F /* Supporting Files */,
+				F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */,
+				F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */,
 			);
 			path = SuperBestCoffeeLocator;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				F010CC7118063CDA00E84A4F /* main.m in Sources */,
 				F010CC7E18063CDA00E84A4F /* FMSViewController.m in Sources */,
+				F010CCA018063F0000E84A4F /* FMSCoffeeShop.m in Sources */,
 				F010CC7518063CDA00E84A4F /* FMSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F010CCA118063F0000E84A4F /* FMSCoffeeShop.m in Sources */,
 				F010CC9318063CDA00E84A4F /* SuperBestCoffeeLocatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
