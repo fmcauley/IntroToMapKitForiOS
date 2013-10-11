@@ -44,6 +44,7 @@
     self.mapKit.showsBuildings = YES;
     self.mapKit.showsPointsOfInterest = YES;
     self.mapKit.showsUserLocation = YES;
+    self.mapKit.pitchEnabled = YES;
     
     // camera
     // Zoom into the Washington Monument with a pitch of 60°
