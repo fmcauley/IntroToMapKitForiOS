@@ -20,7 +20,7 @@
 
 - (CLLocationCoordinate2D)centerCoffeeShop
 {
-    FMSCoffeeShop *coffeeShop = [[self generateTheCoffeeShopData] lastObject];
+    FMSCoffeeShop *coffeeShop = [self generateTheCoffeeShopData][8];
     return coffeeShop.coordinate;
 }
 
