@@ -8,6 +8,7 @@
 
 #import "FMSViewController.h"
 #import "FMSGenerateCoffeeData.h"
+#import "FMSCoffeeShop.h"
 
 
 @interface FMSViewController () <MKMapViewDelegate>
@@ -48,9 +49,12 @@
     // Zoom into the Washington Monument with a pitch of 60°
     MKMapCamera *aCamera = [MKMapCamera camera];
     [aCamera setCenterCoordinate:[gen centerCoffeeShop]];
-    [aCamera setAltitude:400];
-    [aCamera setPitch:60];
+    [aCamera setAltitude:500];
+    [aCamera setPitch:45];
     [self.mapKit setCamera:aCamera];
+    
+    // setup the map for the user location
+    [self configureCalloutLocationForUser:self.mapKit];
     
     /**
      - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
@@ -62,6 +66,29 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma -
+#pragma mark private methods
+- (void)configureCalloutLocationForUser:(MKMapView*)mapView
+{
+    if (mapView.userLocation.location){
+        NSMutableDictionary *locations = [[NSMutableDictionary alloc]initWithCapacity:[mapView.annotations count]];
+        
+        [mapView.annotations enumerateObjectsUsingBlock:^(FMSCoffeeShop <MKAnnotation> *store, NSUInteger idx, BOOL *stop) {
+            CLLocationCoordinate2D coord = [store coordinate];
+            CLLocation *anotLocation = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+            locations[[NSNumber numberWithFloat:[mapView.userLocation.location distanceFromLocation:anotLocation]]] = store;
+        }];
+        
+        [mapView selectAnnotation:locations[[[[[[NSMutableArray alloc]initWithArray:[locations allKeys]] sortedArrayUsingDescriptors: [NSArray arrayWithObject: [NSSortDescriptor sortDescriptorWithKey: @"self" ascending: NO]]] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != 0"]] lastObject]]
+                         animated:YES];
+    } else if ([mapView.annotations count] > 0) {
+        //select a random annotation since the user did not allow the app to show them on the map.
+        int random = arc4random() % [mapView.annotations count];
+        
+        [mapView selectAnnotation:[mapView.annotations objectAtIndex:random] animated:YES];
+    }
 }
 
 #pragma -
