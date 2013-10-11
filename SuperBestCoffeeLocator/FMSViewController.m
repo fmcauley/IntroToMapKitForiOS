@@ -92,7 +92,43 @@
     }
 }
 
-#pragma -
-#pragma mark MKMapViewDelegate
+#pragma mark -
+#pragma mark MKMapDelegate Managing Annotation Views
 
-@end
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    if ([annotation isKindOfClass:[FMSCoffeeShop class]])
+    {
+        MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView
+                                                        dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                   reuseIdentifier:@"CustomPinAnnotationView"];
+            
+           /**
+            UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            //Place holder code for new images.
+            [infoButton setImage:[UIImage imageNamed:@"images.jpeg"] forState:UIControlStateNormal];
+            [infoButton setImage:[UIImage imageNamed:@"images.jpeg"] forState:UIControlStateHighlighted];
+            pinView.rightCalloutAccessoryView = infoButton;
+            pinView.rightCalloutAccessoryView = infoButton;
+            */
+            
+//            pinView.image = [UIImage imageNamed:@"images.jpeg"]; //This set the pin image to the image named
+            [pinView.rightCalloutAccessoryView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"images.jpeg"]]];
+            //The left and right callouts can hold a UIView to display other data.
+            
+            pinView.enabled = YES;
+            pinView.canShowCallout = YES;
+
+        }
+        else
+            pinView.annotation = annotation;
+        return pinView;
+    }
+    return nil;
+}@end

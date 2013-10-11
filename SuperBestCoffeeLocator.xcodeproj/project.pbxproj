@@ -28,6 +28,7 @@
 		F0D357D918070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
 		F0D357DA18070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
 		F0D357DC1807485C00E58543 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D357DB1807485C00E58543 /* CoreLocation.framework */; };
+		F0D357E01807945600E58543 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F0D357DF1807945600E58543 /* images.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F0D357D718070E3B00E58543 /* FMSGenerateCoffeeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSGenerateCoffeeData.h; sourceTree = "<group>"; };
 		F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSGenerateCoffeeData.m; sourceTree = "<group>"; };
 		F0D357DB1807485C00E58543 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F0D357DF1807945600E58543 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = images.jpeg; path = ../../../Downloads/images.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		F010CC6A18063CDA00E84A4F /* SuperBestCoffeeLocator */ = {
 			isa = PBXGroup;
 			children = (
+				F0D357DE1807942C00E58543 /* Resources */,
 				F0D357D618070E0A00E58543 /* Helpers */,
 				F0D357D518070D8100E58543 /* StoryBoards */,
 				F0D357D418070D6C00E58543 /* ViewControllers */,
@@ -215,6 +218,14 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		F0D357DE1807942C00E58543 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0D357DF1807945600E58543 /* images.jpeg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F010CC7B18063CDA00E84A4F /* Main_iPad.storyboard in Resources */,
+				F0D357E01807945600E58543 /* images.jpeg in Resources */,
 				F010CC8018063CDA00E84A4F /* Images.xcassets in Resources */,
 				F010CC7818063CDA00E84A4F /* Main_iPhone.storyboard in Resources */,
 				F010CC6F18063CDA00E84A4F /* InfoPlist.strings in Resources */,
