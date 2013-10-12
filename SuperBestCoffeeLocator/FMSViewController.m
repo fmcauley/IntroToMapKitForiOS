@@ -14,6 +14,7 @@
 @interface FMSViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapKit;
+@property (strong, nonatomic) FMSGenerateCoffeeData *gen;
 
 @end
 
@@ -22,12 +23,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    FMSGenerateCoffeeData *gen = [FMSGenerateCoffeeData new];
+    self.gen = [FMSGenerateCoffeeData new];
+    [self.mapKit addAnnotations:[self.gen coffeeShops]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self makeRegionForMap:self.mapKit];
+    [self setCameraForMap:self.mapKit];
     
-    [self.mapKit addAnnotations:[gen coffeeShops]];
-    
-    
+    /**
+     - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
+     Add a button that will set this for display purpose?
+     */
+}
+
+- (void)makeRegionForMap:(MKMapView *)map
+{
     //set the region
     MKCoordinateRegion region;
     MKCoordinateSpan span;
@@ -35,35 +48,36 @@
     span.latitudeDelta = 0.3;
     span.longitudeDelta = 0.3;
     region.span=span;
-    region.center = [gen centerCoffeeShop];
+    region.center = [self.gen centerCoffeeShop];
     
-    [self.mapKit setRegion:region animated:TRUE];
-    [self.mapKit regionThatFits:region];
+    [map setRegion:region animated:TRUE];
+    [map regionThatFits:region];
     
     // configure the map
-    self.mapKit.showsBuildings = YES;
-    self.mapKit.showsPointsOfInterest = YES;
-    self.mapKit.showsUserLocation = YES;
-    self.mapKit.pitchEnabled = YES;
-     
-    
+    map.showsBuildings = YES;
+    map.showsPointsOfInterest = YES;
+    map.showsUserLocation = YES;
+    map.pitchEnabled = YES;
+}
+
+- (void)setCameraForMap:(MKMapView *)map
+{
+    //get the center of the map
+    CLLocationCoordinate2D mapCenter = map.centerCoordinate;
+//    mapCenter = [map convertPoint:
+//                 CGPointMake(1, (map.frame.size.height/2.0))
+//                   toCoordinateFromView:map];
     // camera
     // Zoom into the Washington Monument with a pitch of 60°
-    /*
-    MKMapCamera *aCamera = [MKMapCamera camera];
-    [aCamera setCenterCoordinate:[gen centerCoffeeShop]];
-    [aCamera setAltitude:500];
-    [aCamera setPitch:45];
-    [self.mapKit setCamera:aCamera];
     
-    // setup the map for the user location
-    [self configureCalloutLocationForUser:self.mapKit];
-     */
-    
-    /**
-     - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
-     Add a button that will set this for display purpose?
-     */
+     MKMapCamera *aCamera = [MKMapCamera camera];
+     [aCamera setCenterCoordinate:mapCenter];
+     [aCamera setAltitude:150];
+     [aCamera setPitch:60];
+     [map setCamera:aCamera];
+     
+     // setup the map for the user location
+//     [self configureCalloutLocationForUser:self.mapKit];
 }
 
 - (void)didReceiveMemoryWarning
