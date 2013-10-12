@@ -13,7 +13,7 @@
 
 @interface FMSViewController () <MKMapViewDelegate>
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapKit;
+@property (weak, nonatomic) IBOutlet MKMapView *mapKit;
 
 @end
 
@@ -21,18 +21,12 @@
 
 - (void)viewDidLoad
 {
-    // TODO: create a core data store for the map data
-    
     [super viewDidLoad];
-
-    
-    self.mapKit = [[MKMapView alloc]
-                   initWithFrame:
-                   CGRectMake(10, 210, 300, 125)];
 	
     FMSGenerateCoffeeData *gen = [FMSGenerateCoffeeData new];
     
     [self.mapKit addAnnotations:[gen coffeeShops]];
+    
     
     //set the region
     MKCoordinateRegion region;
@@ -51,9 +45,11 @@
     self.mapKit.showsPointsOfInterest = YES;
     self.mapKit.showsUserLocation = YES;
     self.mapKit.pitchEnabled = YES;
+     
     
     // camera
     // Zoom into the Washington Monument with a pitch of 60°
+    /*
     MKMapCamera *aCamera = [MKMapCamera camera];
     [aCamera setCenterCoordinate:[gen centerCoffeeShop]];
     [aCamera setAltitude:500];
@@ -62,6 +58,7 @@
     
     // setup the map for the user location
     [self configureCalloutLocationForUser:self.mapKit];
+     */
     
     /**
      - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
