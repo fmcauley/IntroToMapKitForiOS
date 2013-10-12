@@ -108,26 +108,18 @@
     if ([annotation isKindOfClass:[FMSCoffeeShop class]])
     {
         MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView
-                                                        dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+                                                              dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         if (!pinView)
         {
             pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                   reuseIdentifier:@"CustomPinAnnotationView"];
+                                                      reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.enabled = YES;
             pinView.canShowCallout = YES;
-        
-           // pinView.image = [UIImage imageNamed:@"wallet-annotation-check.png"];
-            
-            //customze the view
-//            UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//            [infoButton setImage:[UIImage imageNamed:@"wallet-annotation.png"] forState:UIControlStateNormal];
-//            [infoButton setImage:[UIImage imageNamed:@"wallet-annotation.png"] forState:UIControlStateHighlighted];
-//            pinView.leftCalloutAccessoryView = infoButton;
-
         }
         else
             pinView.annotation = annotation;
         return pinView;
     }
     return nil;
-}@end
+}
+@end
