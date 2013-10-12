@@ -25,6 +25,7 @@
 		F010CC9D18063E0F00E84A4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F010CC9C18063E0F00E84A4F /* MapKit.framework */; };
 		F010CCA018063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
 		F010CCA118063F0000E84A4F /* FMSCoffeeShop.m in Sources */ = {isa = PBXBuildFile; fileRef = F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */; };
+		F03C11FF1809B19E0004D15F /* wallet-annotation-check.png in Resources */ = {isa = PBXBuildFile; fileRef = F03C11FE1809B19E0004D15F /* wallet-annotation-check.png */; };
 		F0D357D918070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
 		F0D357DA18070E3B00E58543 /* FMSGenerateCoffeeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */; };
 		F0D357DC1807485C00E58543 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D357DB1807485C00E58543 /* CoreLocation.framework */; };
@@ -65,6 +66,7 @@
 		F010CC9C18063E0F00E84A4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F010CC9E18063F0000E84A4F /* FMSCoffeeShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSCoffeeShop.h; sourceTree = "<group>"; };
 		F010CC9F18063F0000E84A4F /* FMSCoffeeShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSCoffeeShop.m; sourceTree = "<group>"; };
+		F03C11FE1809B19E0004D15F /* wallet-annotation-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wallet-annotation-check.png"; path = "../../../Desktop/wallet-annotation-check.png"; sourceTree = "<group>"; };
 		F0D357D718070E3B00E58543 /* FMSGenerateCoffeeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSGenerateCoffeeData.h; sourceTree = "<group>"; };
 		F0D357D818070E3B00E58543 /* FMSGenerateCoffeeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSGenerateCoffeeData.m; sourceTree = "<group>"; };
 		F0D357DB1807485C00E58543 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -221,6 +223,7 @@
 		F0D357DE1807942C00E58543 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F03C11FE1809B19E0004D15F /* wallet-annotation-check.png */,
 				F0D357DF1807945600E58543 /* images.jpeg */,
 			);
 			name = Resources;
@@ -303,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03C11FF1809B19E0004D15F /* wallet-annotation-check.png in Resources */,
 				F010CC7B18063CDA00E84A4F /* Main_iPad.storyboard in Resources */,
 				F0D357E01807945600E58543 /* images.jpeg in Resources */,
 				F010CC8018063CDA00E84A4F /* Images.xcassets in Resources */,

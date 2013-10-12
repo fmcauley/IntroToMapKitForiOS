@@ -31,12 +31,7 @@
 {
     [super viewDidAppear:animated];
     [self makeRegionForMap:self.mapKit];
-    [self setCameraForMap:self.mapKit];
-    
-    /**
-     - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated
-     Add a button that will set this for display purpose?
-     */
+//    [self setCameraForMap:self.mapKit];
 }
 
 - (void)makeRegionForMap:(MKMapView *)map
@@ -45,7 +40,7 @@
     MKCoordinateRegion region;
     MKCoordinateSpan span;
     
-    span.latitudeDelta = 0.3;
+    span.latitudeDelta = 0.3; //the larger the delta the further out you go.
     span.longitudeDelta = 0.3;
     region.span=span;
     region.center = [self.gen centerCoffeeShop];
@@ -58,26 +53,19 @@
     map.showsPointsOfInterest = YES;
     map.showsUserLocation = YES;
     map.pitchEnabled = YES;
+    map.zoomEnabled = YES;
+    map.rotateEnabled = YES;
 }
 
 - (void)setCameraForMap:(MKMapView *)map
 {
     //get the center of the map
     CLLocationCoordinate2D mapCenter = map.centerCoordinate;
-//    mapCenter = [map convertPoint:
-//                 CGPointMake(1, (map.frame.size.height/2.0))
-//                   toCoordinateFromView:map];
-    // camera
-    // Zoom into the Washington Monument with a pitch of 60°
-    
      MKMapCamera *aCamera = [MKMapCamera camera];
      [aCamera setCenterCoordinate:mapCenter];
      [aCamera setAltitude:150];
      [aCamera setPitch:60];
      [map setCamera:aCamera];
-     
-     // setup the map for the user location
-//     [self configureCalloutLocationForUser:self.mapKit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,7 +103,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
+        return nil; //Unless you want to place a custom annotation
     
     if ([annotation isKindOfClass:[FMSCoffeeShop class]])
     {
@@ -125,22 +113,16 @@
         {
             pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                    reuseIdentifier:@"CustomPinAnnotationView"];
-            
-           /**
-            UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            //Place holder code for new images.
-            [infoButton setImage:[UIImage imageNamed:@"images.jpeg"] forState:UIControlStateNormal];
-            [infoButton setImage:[UIImage imageNamed:@"images.jpeg"] forState:UIControlStateHighlighted];
-            pinView.rightCalloutAccessoryView = infoButton;
-            pinView.rightCalloutAccessoryView = infoButton;
-            */
-            
-//            pinView.image = [UIImage imageNamed:@"images.jpeg"]; //This set the pin image to the image named
-            [pinView.rightCalloutAccessoryView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"images.jpeg"]]];
-            //The left and right callouts can hold a UIView to display other data.
-            
             pinView.enabled = YES;
             pinView.canShowCallout = YES;
+        
+           // pinView.image = [UIImage imageNamed:@"wallet-annotation-check.png"];
+            
+            //customze the view
+//            UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [infoButton setImage:[UIImage imageNamed:@"wallet-annotation.png"] forState:UIControlStateNormal];
+//            [infoButton setImage:[UIImage imageNamed:@"wallet-annotation.png"] forState:UIControlStateHighlighted];
+//            pinView.leftCalloutAccessoryView = infoButton;
 
         }
         else
