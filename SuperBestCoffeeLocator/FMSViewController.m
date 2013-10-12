@@ -12,7 +12,8 @@
 
 
 @interface FMSViewController () <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapKit;
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapKit;
 
 @end
 
@@ -23,6 +24,11 @@
     // TODO: create a core data store for the map data
     
     [super viewDidLoad];
+
+    
+    self.mapKit = [[MKMapView alloc]
+                   initWithFrame:
+                   CGRectMake(10, 210, 300, 125)];
 	
     FMSGenerateCoffeeData *gen = [FMSGenerateCoffeeData new];
     
