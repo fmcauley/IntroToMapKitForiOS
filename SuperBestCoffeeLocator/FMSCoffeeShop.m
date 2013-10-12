@@ -30,7 +30,6 @@
 
 #pragma mark - 
 #pragma mark MKAnnotation Methods
-
 - (NSString *)title
 {
     return self.cofeeShopName;
@@ -48,5 +47,4 @@
     coord.longitude = self.lng;
     return coord;
 }
-
 @end
